@@ -17,7 +17,7 @@ start:
 	python manage.py runserver
 
 render-start:
-	gunicorn task_manager.wsgi
+	python manage.py migrate --noinput && gunicorn task_manager.wsgi
 
 build:
 	./build.sh
