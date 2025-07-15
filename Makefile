@@ -23,7 +23,7 @@ build:
 	./build.sh
 
 test:
-	python manage.py test
+	uv python manage.py test
 
 test-cov:
 	uv run coverage run ./manage.py test
