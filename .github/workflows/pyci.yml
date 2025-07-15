@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -17,25 +18,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m venv venv
-          source .venv/Scripts/activate
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run linter
-        run: |
-          source .venv/Scripts/activate
-          make lint
+        run: make lint
 
       - name: Run tests
-        run: |
-          source .venv/Scripts/activate
-          make test
+        run: make test
 
       - name: Run test coverage
-        run: |
-          source .venv/Scripts/activate
-          make test-cov
+        run: make test-cov
 
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@v5
