@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -34,6 +35,9 @@ jobs:
       - name: Run test coverage
         run: make test-cov
 
+      - name: Confirm coverage.xml exists
+        run: ls -lah coverage.xml
+
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
@@ -42,7 +46,7 @@ jobs:
           args: >
             -Dsonar.projectKey=IlyaLysenkov-Hexlet_python-project-522
             -Dsonar.organization=ilyalysenkov-hexlet
+            -Dsonar.python.version=3.12
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=tests/**
             -Dsonar.exclusions=tests/**
-
