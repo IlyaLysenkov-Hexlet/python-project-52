@@ -23,11 +23,14 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Run linter and pytest
-        run: make check
+      - name: Run linter
+        run: make lint
+
+      - name: Run tests
+        run: make test
 
       - name: Run test coverage
-        run: make test-coverage
+        run: make test-cov
 
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@v5
