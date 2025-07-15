@@ -15,22 +15,27 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install Poetry
-        run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-
       - name: Install dependencies
-        run: make install
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run linter
-        run: make lint
+        run: |
+          source venv/bin/activate
+          make lint
 
       - name: Run tests
-        run: make test
+        run: |
+          source venv/bin/activate
+          make test
 
       - name: Run test coverage
-        run: make test-cov
+        run: |
+          source venv/bin/activate
+          make test-cov
 
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@v5
