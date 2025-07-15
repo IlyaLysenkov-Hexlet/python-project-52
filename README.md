@@ -7,7 +7,7 @@
 [![Maintainability](https://sonarcloud.io/api/project_badges/measure?project=IlyaLysenkov-Hexlet_python-project-522&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=IlyaLysenkov-Hexlet_python-project-522)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=IlyaLysenkov-Hexlet_python-project-522&metric=coverage)](https://sonarcloud.io/summary/new_code?id=IlyaLysenkov-Hexlet_python-project-522)
 
-🔗 [Веб-версия приложения (Render)](https://python-project-52.onrender.com)
+🔗 [Веб-версия приложения (Render)](https://python-project-52-02nk.onrender.com/)
 
 ---
 
