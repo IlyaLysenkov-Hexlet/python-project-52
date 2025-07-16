@@ -1,4 +1,4 @@
-# Проект Менеджер задач
+# Проект 4 Менеджер задач
 
 ### Hexlet tests and linter status:
 
